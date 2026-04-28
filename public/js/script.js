@@ -51,8 +51,24 @@ function invert(array){
         return
     }
 
+    if (array === 'kicks'){
+        for (let i = 0; i < kicks.length; i++){
+            kicks[i] = !kicks[i]
+        }
+    }else if (array === 'snares'){
+        for (let i = 0; i < snares.length; i++){
+            snares[i] = !snares[i] 
+        }
+    }else if (array === 'hiHats'){
+        for (let i = 0; i < hiHats.length; i++){
+            hiHats[i] = !hiHats[i]
+        }
+    }else if (array === 'rideCymbals'){
+        for (let i = 0; i < rideCymbals.length; i++){
+            rideCymbals[i] = !rideCymbals[i]
+        }
+    }
 }
-
 
 function presetHandler(string, index, newPresetArray){
     // should return an array, the array willl have one or teo elements depending on how it will be called, if wrong calling it will send a 404. if index is valid it should return a 200 with the new array, if index is invalid it should return a 404
