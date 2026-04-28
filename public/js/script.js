@@ -6,6 +6,10 @@ let rideCymbals = [false, false, false, false, false, false, false, false, false
 
 function toggleDrum(string, index){
     // toggle the value at the index of the array that corresponds to the string
+    if (index < 0 || index > 16){
+        return
+    }
+    
     if (string === "kicks"){
         kicks[index] = !kicks[index]
     } else if (string === "snares"){
@@ -19,12 +23,34 @@ function toggleDrum(string, index){
 
 function clear(array){
     // set all values to false
-    return array.map(value => value = false)
+    if (!array){
+        return
+    }
+
+    if(array === 'kicks'){
+        for (let i = 0; i < kicks.length; i++){
+            kicks[i] = false
+        }
+    }else if (array === 'snares'){
+        for (let i = 0; i < snares.length; i++){
+            snares[i] = false
+        }
+    }else if (array === 'hiHats'){
+        for (let i = 0; i < hiHats.length; i++){
+            hiHats[i] = false
+        }
+    }else if (array === 'rideCymbals'){
+        for (let i = 0; i < rideCymbals.length; i++){
+            rideCymbals[i] = false
+        }
+    }
 }
 
 function invert(array){
-    // set all the boolean values to their opposite 
-    return array.map(value => !value)
+    if (!array){
+        return
+    }
+
 }
 
 
